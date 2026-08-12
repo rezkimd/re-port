@@ -1,18 +1,37 @@
+# Agents & Internal AI Config / Brain (Keep Private)
+.agents/
+.gemini/
+
 # Dependencies
 node_modules
 .pnp
 .pnp.js
 
-# Build outputs
+# Build outputs & cache
 dist
 build
+out
+.output
+.next
+.react-router/
+.tanstack/
+.turbo
 *.tsbuildinfo
 
-# Environment variables
+# Environment variables & local secrets
 .env
 .env*.local
+.env.local
+.dev.vars*
 
-# IDEs and editors
+# Vercel & Deployment metadata
+.vercel
+.netlify
+.wrangler
+.alchemy
+.open-next
+
+# IDEs & Editor configs
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -23,6 +42,7 @@ build
 *.swo
 *~
 .DS_Store
+Thumbs.db
 
 # Logs
 logs
@@ -33,17 +53,11 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
-# Turbo
-.turbo
-
-# Better-T-Stack
-.alchemy
-
-# Testing
+# Testing & Coverage
 coverage
 .nyc_output
 
-# Misc
+# Temporary files & cache
 *.tgz
 .cache
 tmp

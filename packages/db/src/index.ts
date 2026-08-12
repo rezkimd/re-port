@@ -1,9 +1,22 @@
 import mongoose from "mongoose";
+import "dotenv/config";
 
-await mongoose.connect(process.env.DATABASE_URL || "").catch((error) => {
-	console.log("Error connecting to database:", error);
-});
+export const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+  
+  try {
+    await mongoose.connect(process.env.MONGODB_URI)
+    console.log("📦 Database connected");
+  } catch (error) {
+    console.error("❌ Database connection error:", error);
+    process.exit(1);
+  }
+};
 
-const client = mongoose.connection.getClient().db("myDB");
+// Export semua model
+export * from "./models/project";
+export * from "./models/profile";
 
-export { client };
+export const client = mongoose.connection;

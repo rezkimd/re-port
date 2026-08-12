@@ -16,11 +16,12 @@
   },
   "dependencies": {
     "dotenv": "^17.2.2",
+    "react-router-dom": "^7.13.0",
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "turbo": "^2.5.4",
-    "@types/node": "^22.13.11"
+    "@types/node": "^22.13.11",
+    "turbo": "^2.5.4"
   },
   "packageManager": "npm@11.6.1"
 }

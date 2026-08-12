@@ -7,7 +7,7 @@ import {
 	ScrollRestoration,
 } from "react-router";
 import type { Route } from "./+types/root";
-import "./index.css";
+import "./styles/index.css";
 import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "./components/ui/sonner";
