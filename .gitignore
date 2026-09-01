@@ -1,6 +1,8 @@
 # Agents & Internal AI Config / Brain (Keep Private)
 .agents/
 .gemini/
+scratch/
+
 
 # Dependencies
 node_modules

@@ -1,16 +1,71 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Holistical";
+  src: url("/fonts/Holistical.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Holistical", "Space Grotesk", cursive, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-mustard: #CBB800;
+  --color-mustard-light: #F5EE99;
+  --color-mustard-dark: #877B00;
+  --color-umber: #3A2F00;
+  --color-umber-light: #5C4B08;
+  --color-umber-dark: #241D00;
+  --color-teal: #006E5E;
+  --color-teal-light: #29A18D;
+  --color-teal-dark: #00473D;
+  --color-sage: #F2FEDC;
+  --color-sage-dark: #D5E8B3;
+}
+
+@keyframes gentle-bob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-gentle-bob {
+  animation: gentle-bob 3.5s ease-in-out infinite;
+}
+
+.animate-gentle-bob-delayed-1 {
+  animation: gentle-bob 4s ease-in-out infinite 0.7s;
+}
+
+.animate-gentle-bob-delayed-2 {
+  animation: gentle-bob 3.8s ease-in-out infinite 1.4s;
+}
+
+.animate-gentle-bob-delayed-3 {
+  animation: gentle-bob 4.2s ease-in-out infinite 2.1s;
+}
+
+/* Pause floating animation when user hovers over the clickable hotspot group */
+.group:hover .animate-gentle-bob,
+.group:hover .animate-gentle-bob-delayed-1,
+.group:hover .animate-gentle-bob-delayed-2,
+.group:hover .animate-gentle-bob-delayed-3 {
+  animation-play-state: paused;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-[#1a1500] text-foreground;
+
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;

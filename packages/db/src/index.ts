@@ -7,7 +7,8 @@ export const connectDB = async () => {
   }
   
   try {
-    await mongoose.connect(process.env.MONGODB_URI)
+    const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/re-port";
+    await mongoose.connect(uri);
     console.log("📦 Database connected");
   } catch (error) {
     console.error("❌ Database connection error:", error);
