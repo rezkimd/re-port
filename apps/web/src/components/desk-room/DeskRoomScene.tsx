@@ -21,7 +21,7 @@ export const DeskRoomScene: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[calc(100svh-53px)] bg-[#1a1500] select-none touch-pan-x scroll-smooth overflow-hidden portrait:max-md:overflow-x-auto portrait:max-md:overflow-y-hidden landscape:overflow-hidden md:overflow-hidden">
+    <div className="relative w-full h-full bg-[#1a1500] select-none touch-pan-x scroll-smooth overflow-hidden portrait:max-md:overflow-x-auto portrait:max-md:overflow-y-hidden landscape:overflow-hidden md:overflow-hidden">
       {/* 
         Responsive Canvas Wrapper:
         - Mobile Portrait: Full screen height (h-full), width scales to 16:9 ratio, allowing horizontal panoramic scroll to explore the room.
@@ -31,27 +31,27 @@ export const DeskRoomScene: React.FC = () => {
         {/* 1920x1080 Interactive SVG Vector Canvas */}
         <svg
           viewBox="0 0 1920 1080"
-          className="h-full w-full max-w-[1920px] max-h-[1080px] object-contain drop-shadow-2xl flex-shrink-0 portrait:max-md:h-full portrait:max-md:w-auto portrait:max-md:aspect-[16/9]"
+          className="h-full w-full object-contain drop-shadow-2xl flex-shrink-0 portrait:max-md:h-full portrait:max-md:w-auto portrait:max-md:aspect-[16/9]"
           preserveAspectRatio="xMidYMid meet"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            {/* Gradients */}
+            {/* Gradients connected to Theme Tokens */}
             <linearGradient id="wallGradient" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#D0DEC2" />
-              <stop offset="35%" stopColor="#D5E8B3" />
-              <stop offset="100%" stopColor="#DDEBD0" />
+              <stop offset="0%" stopColor="var(--room-wall-0, #D0DEC2)" />
+              <stop offset="35%" stopColor="var(--room-wall-35, #D5E8B3)" />
+              <stop offset="100%" stopColor="var(--room-wall-100, #DDEBD0)" />
             </linearGradient>
 
             <linearGradient id="deskWoodGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#4A3114" />
-              <stop offset="4%" stopColor="#38230D" />
-              <stop offset="100%" stopColor="#241405" />
+              <stop offset="0%" stopColor="var(--room-desk-0, #4A3114)" />
+              <stop offset="4%" stopColor="var(--room-desk-4, #38230D)" />
+              <stop offset="100%" stopColor="var(--room-desk-100, #241405)" />
             </linearGradient>
 
             <linearGradient id="sunbeamGrad" x1="1" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#F2FEDC" stopOpacity="0.32" />
-              <stop offset="100%" stopColor="#F2FEDC" stopOpacity="0.0" />
+              <stop offset="0%" stopColor="var(--room-sunbeam-color, #F2FEDC)" stopOpacity="var(--room-sunbeam-opacity, 0.32)" />
+              <stop offset="100%" stopColor="var(--room-sunbeam-color, #F2FEDC)" stopOpacity="0" />
             </linearGradient>
 
             <linearGradient id="monitorScreenGrad" x1="0" y1="0" x2="0" y2="1">
@@ -76,6 +76,16 @@ export const DeskRoomScene: React.FC = () => {
 
           {/* LAYER 1: ROOM PERSPECTIVE ARCHITECTURE */}
           <RoomArchitecture />
+
+          {/* LAYER 1.5: NIGHT TIME AMBIENT OVERLAY */}
+          <rect
+            width="1920"
+            height="1080"
+            fill="#050C07"
+            opacity="var(--room-night-ambient, 0)"
+            pointerEvents="none"
+            className="transition-opacity duration-700"
+          />
 
           {/* LAYER 2: SOLID WALL INSTALLATIONS */}
           <WallInstallations />

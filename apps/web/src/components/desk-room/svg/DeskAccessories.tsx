@@ -1,4 +1,6 @@
 import React from "react";
+import { SleepingCat } from "./SleepingCat";
+import { DraggableMouse } from "./DraggableMouse";
 
 export const DeskAccessories: React.FC = () => {
   return (
@@ -21,27 +23,28 @@ export const DeskAccessories: React.FC = () => {
         <ellipse cx="1060" cy="685" rx="30" ry="15" fill="#FFFFFF" stroke="#5C4B08" strokeWidth="2" />
       </g>
 
-      {/* Reference Books Stack (Right Desk Corner) */}
+      {/* Relocated Reference Books Stack (Moved neatly next to center stationery) */}
       <g id="reference-books-stack" filter="url(#softDropShadow)">
-        <rect x="1660" y="650" width="150" height="36" rx="4" fill="#CBB800" stroke="#3A2F00" strokeWidth="1.5" />
-        <g transform="rotate(-2, 1670, 615)">
-          <rect x="1670" y="615" width="140" height="34" rx="4" fill="#006E5E" stroke="#3A2F00" strokeWidth="1.5" />
+        <rect x="1110" y="650" width="120" height="30" rx="4" fill="#CBB800" stroke="#3A2F00" strokeWidth="1.5" />
+        <g transform="rotate(-2, 1115, 622)">
+          <rect x="1115" y="622" width="112" height="28" rx="4" fill="#006E5E" stroke="#3A2F00" strokeWidth="1.5" />
         </g>
-        <g transform="rotate(3, 1675, 585)">
-          <rect x="1675" y="585" width="130" height="30" rx="4" fill="#E07A5F" stroke="#3A2F00" strokeWidth="1.5" />
+        <g transform="rotate(3, 1120, 596)">
+          <rect x="1120" y="596" width="104" height="26" rx="4" fill="#E07A5F" stroke="#3A2F00" strokeWidth="1.5" />
         </g>
       </g>
 
-      {/* Mechanical Keyboard & Optical Mouse */}
-      <g id="keyboard-mouse">
-        {/* Keyboard */}
-        <rect x="1220" y="710" width="430" height="85" rx="8" fill="#241D00" stroke="#877B00" strokeWidth="2" filter="url(#softDropShadow)" />
-        <rect x="1230" y="718" width="410" height="68" rx="5" fill="#3A2F00" opacity="0.85" />
-        {/* Mouse */}
-        <g transform="rotate(15, 1700, 750)">
-          <rect x="1700" y="750" width="55" height="80" rx="25" fill="#2C1B0A" stroke="#5C4B08" strokeWidth="1.5" filter="url(#softDropShadow)" />
-        </g>
+      {/* Sleeping Cat on Desk Edge (Black in Light Mode, White in Dark Mode) */}
+      <SleepingCat x={1630} y={600} scale={1.05} />
+
+      {/* Mechanical Keyboard */}
+      <g id="keyboard">
+        <rect x="1240" y="710" width="410" height="85" rx="8" fill="#241D00" stroke="#877B00" strokeWidth="2" filter="url(#softDropShadow)" />
+        <rect x="1250" y="718" width="390" height="68" rx="5" fill="#3A2F00" opacity="0.85" />
       </g>
+
+      {/* Interactive Draggable Optical Mouse (Constrained strictly to Desk Surface) */}
+      <DraggableMouse initialX={1690} initialY={760} />
     </>
   );
 };

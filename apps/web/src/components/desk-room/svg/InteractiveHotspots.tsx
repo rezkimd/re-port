@@ -44,8 +44,8 @@ export const InteractiveHotspots: React.FC<InteractiveHotspotsProps> = ({ onSele
 
         {/* Floating Banner */}
         <g className="animate-gentle-bob group-hover:scale-105 transition-transform" transform-origin="1425 335">
-          <rect x="1295" y="335" width="260" height="50" rx="8" fill="#CBB800" stroke="#241D00" strokeWidth="3" filter="url(#bannerDropShadow)" />
-          <text x="1320" y="367" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="#241D00">
+          <rect x="1295" y="335" width="260" height="50" rx="8" fill="var(--room-ui-mustard, #CBB800)" stroke="var(--room-ui-border, #241D00)" strokeWidth="3" filter="url(#bannerDropShadow)" />
+          <text x="1320" y="367" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="var(--room-ui-text, #241D00)">
             🖥️ DEMO APPS (MINI OS)
           </text>
         </g>
@@ -65,7 +65,7 @@ export const InteractiveHotspots: React.FC<InteractiveHotspotsProps> = ({ onSele
           height="310"
           rx="10"
           fill="#2C1B0A"
-          stroke="#877B00"
+          stroke="var(--room-ui-mustard, #877B00)"
           strokeWidth="3"
           filter="url(#heavyDropShadow)"
           className="group-hover:stroke-[#CBB800] transition-colors"
@@ -85,9 +85,9 @@ export const InteractiveHotspots: React.FC<InteractiveHotspotsProps> = ({ onSele
 
         {/* Floating Banner */}
         <g className="animate-gentle-bob-delayed-1 group-hover:scale-105 transition-transform" transform-origin="815 340">
-          <rect x="690" y="340" width="250" height="50" rx="8" fill="#006E5E" stroke="#F2FEDC" strokeWidth="2.5" filter="url(#bannerDropShadow)" />
-          <text x="715" y="372" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="#FFFFFF">
-            📁 DYNAMIC CV (FILTER)
+          <rect x="670" y="340" width="290" height="50" rx="8" fill="var(--room-ui-teal, #006E5E)" stroke="var(--room-ui-sage, #F2FEDC)" strokeWidth="2.5" filter="url(#bannerDropShadow)" />
+          <text x="690" y="372" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="#FFFFFF">
+            📁 DOCUMENTS HUB (CV & DECKS)
           </text>
         </g>
       </g>
@@ -107,25 +107,25 @@ export const InteractiveHotspots: React.FC<InteractiveHotspotsProps> = ({ onSele
             height="240"
             rx="12"
             fill="#00473D"
-            stroke="#CBB800"
+            stroke="var(--room-ui-mustard, #CBB800)"
             strokeWidth="2.5"
             filter="url(#heavyDropShadow)"
             className="group-hover:stroke-[#F5EE99] transition-colors"
           />
           {/* Gold Filigree Ornament */}
-          <rect x="225" y="732" width="200" height="215" rx="8" fill="#006E5E" stroke="#CBB800" strokeWidth="2" />
+          <rect x="225" y="732" width="200" height="215" rx="8" fill="#006E5E" stroke="var(--room-ui-mustard, #CBB800)" strokeWidth="2" />
           {/* Open Pages */}
           <rect x="320" y="710" width="350" height="230" rx="10" fill="#FFFFFF" stroke="#D5E8B3" strokeWidth="3" />
           <rect x="490" y="705" width="8" height="235" fill="#D5E8B3" />
         </g>
 
         {/* Ribbon Bookmark */}
-        <path d="M 490,930 Q 480,980 510,995 L 518,990 Q 490,975 498,930 Z" fill="#CBB800" />
+        <path d="M 490,930 Q 480,980 510,995 L 518,990 Q 490,975 498,930 Z" fill="var(--room-ui-mustard, #CBB800)" />
 
         {/* Floating Banner */}
         <g className="animate-gentle-bob-delayed-2 group-hover:scale-105 transition-transform" transform-origin="445 645">
-          <rect x="320" y="645" width="250" height="50" rx="8" fill="#CBB800" stroke="#241D00" strokeWidth="3" filter="url(#bannerDropShadow)" />
-          <text x="355" y="677" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="#241D00">
+          <rect x="320" y="645" width="250" height="50" rx="8" fill="var(--room-ui-mustard, #CBB800)" stroke="var(--room-ui-border, #241D00)" strokeWidth="3" filter="url(#bannerDropShadow)" />
+          <text x="355" y="677" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="var(--room-ui-text, #241D00)">
             📖 JOURNAL & BLOG
           </text>
         </g>
@@ -163,22 +163,11 @@ export const InteractiveHotspots: React.FC<InteractiveHotspotsProps> = ({ onSele
 
         {/* Floating Banner */}
         <g className="animate-gentle-bob-delayed-3 group-hover:scale-105 transition-transform" transform-origin="1050 715">
-          <rect x="940" y="715" width="220" height="50" rx="8" fill="#FFFFFF" stroke="#006E5E" strokeWidth="3" filter="url(#bannerDropShadow)" />
-          <text x="980" y="747" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="#006E5E">
+          <rect x="940" y="715" width="220" height="50" rx="8" fill="#FFFFFF" stroke="var(--room-ui-teal, #006E5E)" strokeWidth="3" filter="url(#bannerDropShadow)" />
+          <text x="980" y="747" fontFamily="Space Grotesk" fontSize="15" fontWeight="bold" fill="var(--room-ui-teal, #006E5E)">
             ✉️ CONTACT ME
           </text>
         </g>
-      </g>
-
-      {/* TOP HEADER STATUS BRANDING BAR */}
-      <g id="top-branding-bar" filter="url(#softDropShadow)">
-        <rect x="0" y="0" width="1920" height="56" fill="#3A2F00" />
-        <text x="40" y="35" fontFamily="Holistical, Space Grotesk" fontSize="22" fontWeight="bold" fill="#CBB800" letterSpacing="1.5">
-          RE-PORT // REZKI'S INTERACTIVE WORKSPACE
-        </text>
-        <text x="1440" y="34" fontFamily="JetBrains Mono" fontSize="12" fontWeight="bold" fill="#F2FEDC">
-          [ INTERACTIVE DESK WORKSPACE ACTIVE ]
-        </text>
       </g>
     </>
   );

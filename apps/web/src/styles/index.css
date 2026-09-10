@@ -15,6 +15,7 @@
   --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Holistical", "Space Grotesk", cursive, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-handwritten: "Caveat", cursive, sans-serif;
 
   --color-mustard: #CBB800;
   --color-mustard-light: #F5EE99;
@@ -27,6 +28,55 @@
   --color-teal-dark: #00473D;
   --color-sage: #F2FEDC;
   --color-sage-dark: #D5E8B3;
+}
+
+@keyframes origami-fold-top {
+  0% {
+    transform: perspective(600px) rotateX(0deg);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: perspective(600px) rotateX(180deg);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes origami-fold-bottom {
+  0% {
+    transform: perspective(600px) rotateX(0deg);
+    transform-origin: top;
+  }
+  100% {
+    transform: perspective(600px) rotateX(-180deg);
+    transform-origin: top;
+  }
+}
+
+@keyframes letter-glide-into-pocket {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(45vw, -40px) scale(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(45vw, 60px) scale(0.65);
+    opacity: 0.1;
+  }
+}
+
+.animate-fold-top {
+  animation: origami-fold-top 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fold-bottom {
+  animation: origami-fold-bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+.animate-glide-pocket {
+  animation: letter-glide-into-pocket 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.2s forwards;
 }
 
 @keyframes gentle-bob {
@@ -105,6 +155,24 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Desk Room Environmental Colors (Light Mode: Warm Morning Studio) */
+  --room-wall-0: #D0DEC2;
+  --room-wall-35: #D5E8B3;
+  --room-wall-100: #DDEBD0;
+  --room-desk-0: #4A3114;
+  --room-desk-4: #38230D;
+  --room-desk-100: #241405;
+  --room-sunbeam-color: #F2FEDC;
+  --room-sunbeam-opacity: 0.32;
+  --room-night-ambient: 0;
+
+  /* UI Tokens (Light Mode) */
+  --room-ui-mustard: #CBB800;
+  --room-ui-teal: #006E5E;
+  --room-ui-sage: #F2FEDC;
+  --room-ui-text: #241D00;
+  --room-ui-border: #3A2F00;
 }
 
 .dark {
@@ -139,6 +207,24 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Desk Room Environmental Colors (Dark Mode: Deep Cozy Midnight Studio) */
+  --room-wall-0: #121B14;
+  --room-wall-35: #162219;
+  --room-wall-100: #1A261D;
+  --room-desk-0: #281B0E;
+  --room-desk-4: #1E1308;
+  --room-desk-100: #0E0703;
+  --room-sunbeam-color: #4AD4BA;
+  --room-sunbeam-opacity: 0.14;
+  --room-night-ambient: 0.32;
+
+  /* UI Tokens (Dark Mode: Luminous & Brighter Contrast) */
+  --room-ui-mustard: #F5EE99;
+  --room-ui-teal: #29A18D;
+  --room-ui-sage: #E2F8B8;
+  --room-ui-text: #FFFFFF;
+  --room-ui-border: #F5EE99;
 }
 
 @theme inline {

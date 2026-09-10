@@ -8,7 +8,6 @@ import {
 } from "react-router";
 import type { Route } from "./+types/root";
 import "./styles/index.css";
-import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "./components/ui/sonner";
 
@@ -25,20 +24,20 @@ export const links: Route.LinksFunction = () => [
 	},
 	{
 		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+		href: "https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
 	},
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="w-full h-full overflow-hidden">
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
 			</head>
-			<body>
+			<body className="w-full h-full overflow-hidden m-0 p-0 bg-[#1a1500]">
 				{children}
 				<ScrollRestoration />
 				<Scripts />
@@ -56,8 +55,7 @@ export default function App() {
 				disableTransitionOnChange
 				storageKey="vite-ui-theme"
 			>
-				<div className="grid grid-rows-[auto_1fr] h-svh">
-					<Header />
+				<div className="w-full h-svh overflow-hidden">
 					<Outlet />
 				</div>
 				<Toaster richColors />
